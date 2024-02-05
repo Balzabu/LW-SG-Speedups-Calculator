@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Game Speedup Calculator</title>
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <!-- Logo Image -->
+            <img src="./assets/images/logo.jpg">
+        </div>
+        <div class="logo-text">
+            <!-- Logo Text -->
+            LW:SG - Speedups Calculator
+        </div>
+    </header>
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Heading -->
+        <h1>Choose type</h1>
+        <!-- Tab Buttons -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'construction')">Construction</button>
+            <button class="tablinks" onclick="openTab(event, 'research')">Research</button>
+            <button class="tablinks" onclick="openTab(event, 'training')">Training</button>
+            <button class="tablinks" onclick="openTab(event, 'healing')">Healing</button>
+        </div>
+
+        <!-- Construction Tab Content -->
+        <div id="construction" class="tabcontent">
+            <form id="construction_form">
+
+                <!-- Toggle for General Speedups -->
+                <div class="input-group toggle-container">
+                    <label for="construction_general_speedups_toggle">Add General Speedups:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="construction_general_speedups_toggle" onclick="toggleGeneralSpeedups('construction')">
+                        <label class="toggle-slider" for="construction_general_speedups_toggle"></label>
+                    </div>
+                </div>
+
+                <!-- Construction Speedups Inputs -->
+                <div class="input-group">
+                    <label for="construction_1m">1m Construct Speedup:</label>
+                    <input type="number" id="construction_1m" name="construction_1m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="construction_5m">5m Construct Speedup:</label>
+                    <input type="number" id="construction_5m" name="construction_5m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="construction_15m">15m Construct Speedup:</label>
+                    <input type="number" id="construction_15m" name="construction_15m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="construction_1h">1h Construct Speedup:</label>
+                    <input type="number" id="construction_1h" name="construction_1h" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="construction_8h">8h Construct Speedup:</label>
+                    <input type="number" id="construction_8h" name="construction_8h" value="0" required>
+                </div>
+                <!-- Add General Speedups for construction -->
+                <div id="construction_general_speedups"></div>
+            </form>
+            <!-- Buttons for Construction Tab -->
+            <div class="button-container">
+                <button onclick="calculate('construction')">Calculate</button>
+                <button onclick="clearFields('construction')">Clear</button>
+            </div>
+        </div>
+
+        <!-- Research Tab Content -->
+        <div id="research" class="tabcontent">
+            <form id="research_form">
+
+                <!-- Toggle for General Speedups -->
+                <div class="input-group toggle-container">
+                    <label for="research_general_speedups_toggle">Add General Speedups:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="research_general_speedups_toggle" onclick="toggleGeneralSpeedups('research')">
+                        <label class="toggle-slider" for="research_general_speedups_toggle"></label>
+                    </div>
+                </div>
+
+                <!-- Research Speedups Inputs -->
+                <div class="input-group">
+                    <label for="research_1m">1m Research Speedup:</label>
+                    <input type="number" id="research_1m" name="research_1m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="research_5m">5m Research Speedup:</label>
+                    <input type="number" id="research_5m" name="research_5m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="research_15m">15m Research Speedup:</label>
+                    <input type="number" id="research_15m" name="research_15m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="research_1h">1h Research Speedup:</label>
+                    <input type="number" id="research_1h" name="research_1h" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="research_8h">8h Research Speedup:</label>
+                    <input type="number" id="research_8h" name="research_8h" value="0" required>
+                </div>
+                <!-- Add General Speedups for research -->
+                <div id="research_general_speedups"></div>
+            </form>
+            <!-- Buttons for Research Tab -->
+            <div class="button-container">
+                <button onclick="calculate('research')">Calculate</button>
+                <button onclick="clearFields('research')">Clear</button>
+            </div>
+        </div>
+
+        <!-- Training Tab Content -->
+        <div id="training" class="tabcontent">
+            <form id="training_form">
+
+                <!-- Toggle for General Speedups -->
+                <div class="input-group toggle-container">
+                    <label for="training_general_speedups_toggle">Add General Speedups:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="training_general_speedups_toggle" onclick="toggleGeneralSpeedups('training')">
+                        <label class="toggle-slider" for="training_general_speedups_toggle"></label>
+                    </div>
+                </div>
+
+                <!-- Training Speedups Inputs -->
+                <div class="input-group">
+                    <label for="training_1m">1m Training Speedup:</label>
+                    <input type="number" id="training_1m" name="training_1m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="training_5m">5m Training Speedup:</label>
+                    <input type="number" id="training_5m" name="training_5m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="training_15m">15m Training Speedup:</label>
+                    <input type="number" id="training_15m" name="training_15m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="training_1h">1h Training Speedup:</label>
+                    <input type="number" id="training_1h" name="training_1h" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="training_8h">8h Training Speedup:</label>
+                    <input type="number" id="training_8h" name="training_8h" value="0" required>
+                </div>
+                <!-- Add General Speedups for training -->
+                <div id="training_general_speedups"></div>
+            </form>
+            <!-- Buttons for Training Tab -->
+            <div class="button-container">
+                <button onclick="calculate('training')">Calculate</button>
+                <button onclick="clearFields('training')">Clear</button>
+            </div>
+        </div>
+
+        <!-- Healing Tab Content -->
+        <div id="healing" class="tabcontent">
+            <form id="healing_form">
+
+                <!-- Toggle for General Speedups -->
+                <div class="input-group toggle-container">
+                    <label for="healing_general_speedups_toggle">Add General Speedups:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="healing_general_speedups_toggle" onclick="toggleGeneralSpeedups('healing')">
+                        <label class="toggle-slider" for="healing_general_speedups_toggle"></label>
+                    </div>
+                </div>
+
+
+                <!-- Healing Speedups Inputs -->
+                <div class="input-group">
+                    <label for="healing_1m">1m Healing Speedup:</label>
+                    <input type="number" id="healing_1m" name="healing_1m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="healing_5m">5m Healing Speedup:</label>
+                    <input type="number" id="healing_5m" name="healing_5m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="healing_15m">15m Healing Speedup:</label>
+                    <input type="number" id="healing_15m" name="healing_15m" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="healing_1h">1h Healing Speedup:</label>
+                    <input type="number" id="healing_1h" name="healing_1h" value="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="healing_8h">8h Healing Speedup:</label>
+                    <input type="number" id="healing_8h" name="healing_8h" value="0" required>
+                </div>
+                <!-- Add General Speedups for healing -->
+                <div id="healing_general_speedups"></div>
+            </form>
+            <!-- Buttons for Healing Tab -->
+            <div class="button-container">
+                <button onclick="calculate('healing')">Calculate</button>
+                <button onclick="clearFields('healing')">Clear</button>
+            </div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="result-box" class="result-box" style="display: none;">
+            <span id="result-content"></span>
+            <!-- Close Icon -->
+            <span class="close-icon" onclick="closeResultBox()">
+                <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
+            </span>
+        </div>
+        
+    </div>
+
+    <footer>
+        Created with ❤️ by <a style="color: red;" href="https://balzabu.io">Balzabu</a><br>[sPy] Alliance — Server 168
+    </footer>
+    <!-- External JavaScript -->
+    <script src="./assets/javascript/script.js"></script>
+</body>
+</html>
