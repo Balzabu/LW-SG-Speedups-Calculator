@@ -13,3 +13,4 @@ This project is a web-based calculator developed using pure HTML and JavaScript.
 The goal was to create a simple yet effective tool for estimating the time saved by using speedup items in the game.
 
 ### Screenshot
+![Preview](/screenshots/screenshot.png?raw=true)
