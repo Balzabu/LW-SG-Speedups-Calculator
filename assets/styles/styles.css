@@ -5,6 +5,8 @@ body {
     color: #ccc;
     margin: 0;
     padding: 0;
+    min-height: 100vh; /* Set minimum height to fill the viewport */
+    position: relative; /* Set position to relative for footer positioning */
 }
 
 header {
@@ -31,7 +33,7 @@ header {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    min-height: calc(100vh - 120px); /* Minimum height for main content container */
+    padding-bottom: 80px; /* Add padding at the bottom for the footer */
 }
 
 h1 {
@@ -47,6 +49,7 @@ h1 {
     display: flex;
     justify-content: center;
     padding-left: 20px; /* Add padding to the left side */
+    padding-right: 10px; /* Add padding to the right side */
 }
 
 .tab button {
@@ -194,6 +197,7 @@ input:checked + .toggle-slider:before {
     border-radius: 10px;
     text-align: center;
     margin-top: 20px;
+    z-index: 1; /* Ensure the result box is above other content */
 }
 
 #result-content {
@@ -207,31 +211,14 @@ input:checked + .toggle-slider:before {
     cursor: pointer;
 }
 
-/* Footer styles */
 footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: #222;
-    color: #ccc;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure the footer is above other content */
-    margin-top: -15%; /* Adjust margin to fully display the footer */
-}
-/* Media queries for responsiveness */
-@media only screen and (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-    .logo-text {
-        font-size: 20px;
-    }
-    .button-container button {
-        padding: 8px 16px;
-    }
-    /* Adjust footer position */
-    footer {
-        position: static;
-    }
+    z-index: 2; /* Ensure the footer is above other content */
 }
