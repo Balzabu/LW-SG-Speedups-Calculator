@@ -12,5 +12,8 @@ I'm always happy to answer questions! Here are some good places to ask them:
 This project is a web-based calculator developed using pure HTML and JavaScript.
 The goal was to create a simple yet effective tool for estimating the time saved by using speedup items in the game.
 
+### Current URL
+[Github Pages](https://balzabu.github.io/LW-SG-Speedups-Calculator/)
+
 ### Screenshot
 ![Preview](/screenshots/screenshot.png?raw=true)
